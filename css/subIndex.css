@@ -1,0 +1,254 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+
+/* font-family: 'IBM Plex Sans KR', sans-serif; */
+
+
+/* ____________________________________________________________header */
+
+header{
+  width:100%; height:150px;
+  background:#0C2645;
+}
+.logo{
+  width:100%; height:100px;
+  background:url(../image/logoSmall3.png) center center no-repeat;
+}
+
+/* ____________________________________________________________nav */
+
+nav{  /*메뉴바 100% 설정*/
+	width:100%;
+	height:50px;
+	background:#2b2f3a;
+	text-align:center;
+  position:relative;  
+	z-index:100;  /*메뉴가 맨 위에 오게 함*/ 		
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+.gnb{
+	width:100%;
+	height:50px;
+	margin:0 auto;
+    /* background:pink; */
+}
+
+/* ///// 주메뉴 ///// */
+.gnbMenu{
+  display:flex;
+  justify-content:space-around;
+}
+.gnbMenu>li{
+	float:left;
+	width:150px;
+	position:relative; /*비어있는 span(삼각형)의 위치기준 부모설정*/
+}
+.gnbMenu>li>a{
+	display:block;
+	color:#e8e8e8;
+	font-size:20px;
+	font-weight:400;
+	line-height:50px;
+}
+.gnbMenu>li:hover>a{color:#fff;}
+
+
+
+/* ///// 서브메뉴 ///// */
+.gnbMenu>li .smenu{  /*모든 서브메뉴*/
+  display:none;
+	position:absolute;
+	top:100%; /*주메뉴가 끝나는 지점에 바로 위치*/
+	padding-top:10px;
+	/* border-left:solid 1px #e8e8e8; */
+	width:150px;
+	height:200px;
+	/*background:#fff; -> bg_box 서브배경박스에 배경색이 들어가있으므로 넣지 않음*/
+}
+/* .gnbMenu>li .last{border-right:solid 1px #e8e8e8;} */
+
+.gnbMenu>li ul li{
+	padding:10px 0px;
+  transition:all 0.4s;
+}
+.gnbMenu>li ul li a{
+	color:#0C2645;
+	font-size:15px;
+  font-weight:400;
+}
+.gnbMenu>li ul li:hover{background:#dbe4ea;}
+
+.bg_box{   /*100%서브배경박스*/
+	display:none;
+	width:100%;
+	height:230px; 
+	background:#fff;
+	/*background:url(../image/smenu_img5.jpg) no-repeat 30% top #fff; */	
+}
+
+.gnbFixed{
+  position:fixed;
+  top:0; 
+}
+
+/* ____________________________________________________________section */
+section{
+  /* background:url(../source/Roastery.jpg); */
+  background-attachment:fixed;
+}
+/* title visual_______________________ */
+section .title{
+  height:300px;
+  position:relative;
+  background:url(../image/title1.png) center center no-repeat;
+  overflow:hidden;
+}
+section .title h1{
+  position:absolute; 
+  left:55%; bottom:0;
+  font-size:50px; font-weight:400;
+  color:#333;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  display:inline-block;
+}
+
+.ma1{
+  position:absolute;
+  top:-100%; right:10%;
+  background:url(../image/madonna-r.png) center center no-repeat;
+  width:330px; height:420px;
+}
+
+
+.container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+
+@keyframes slidein {
+  from {
+    left:8%;
+  }
+  to {
+    left:0%;
+  }
+}
+.sVisual{
+  padding-top:300px;
+  width:1400px; height:1000px;
+  position:relative;
+  /* background:pink; */
+}
+
+.sVisual>p{
+  text-align:center;
+  font-size:30px; font-weight:100;
+  background:#0C2645;
+  color:#ccc;
+  padding:10px 0;
+}
+
+.bean1,.bean2,.bean3,.bean4{
+  position:absolute;
+  height:500px; width:530px;
+  left:31%;
+}
+.bean1{background:url(../source/bean1.png) center center no-repeat;}
+.bean2{background:url(../source/bean2.png) center center no-repeat;}
+.bean3{background:url(../source/bean3.png) center center no-repeat;}
+.bean4{background:url(../source/bean4.png) center center no-repeat;}
+
+.v1{
+  width:1400px; height:1000px;
+}
+
+.v2{
+  width:100%; height:2000px;
+  /* background:violet; */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.v2 .shopping{
+  width:1400px; height:2000px;
+  display:inline-block;
+  /* text-align:center; */
+
+}
+.v2 .shopping ul{
+  width:1400px; height:1200px;
+  /* background:goldenrod; */
+  margin-top:100px;
+}
+.v2 .shopping ul li{
+  float:left;
+  width:220px; height:300px;
+  background:green;
+  margin:30px;
+  position:relative;
+
+  display:flex;
+  flex-direction:column-reverse;
+  align-items:center;
+
+  transition:all 0.3s;
+}
+.v2 .shopping ul li>a{position:absolute; bottom:20px;}
+.v2 .shopping ul li:hover>a{font-weight:bold;}
+
+
+.v2 .shopping ul li:nth-child(1){background:url(../image/semiAuto/1.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(2){background:url(../image/semiAuto/2.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(3){background:url(../image/semiAuto/3.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(4){background:url(../image/semiAuto/4.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(5){background:url(../image/semiAuto/5.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(6){background:url(../image/semiAuto/6.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(7){background:url(../image/semiAuto/7.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(8){background:url(../image/semiAuto/8.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(9){background:url(../image/semiAuto/9.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(10){background:url(../image/semiAuto/10.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(11){background:url(../image/semiAuto/11.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(12){background:url(../image/semiAuto/12.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(13){background:url(../image/semiAuto/13.png) center center no-repeat;}
+.v2 .shopping ul li:nth-child(14){background:url(../image/semiAuto/14.png) center center no-repeat;}
+.v2 .shopping ul li:hover{
+  border:none;
+  border-radius:40px;
+  box-shadow: 0px 20px 15px 0px rgba(0,0,0,0.3);
+  transition:all 0.3s;
+}
+
+/* ____________________________________________________________footer */
+
+footer{
+  width:100%; height:100px;
+  background:#e8e8e8;
+  position:relative;
+  bottom:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+footer>div{
+  width:100%; height:50px;
+  display:flex;
+  justify-content:center;
+}
+
+footer div ul li{
+  font-size:15px;
+  float:left;
+  margin:50px 10px 0;
+}
+footer div ul li:hover{
+  font-weight:bold;
+  border-bottom:2px solid #000;
+}
+
+address{
+  font-size:12px;
+  position:absolute;
+  bottom:10px;
+}
